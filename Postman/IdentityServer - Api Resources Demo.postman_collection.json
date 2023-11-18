@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "6fede007-d3e1-4ddb-b082-a202174dffb1",
+		"name": "IdentityServer - Api Resources Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30919094"
+	},
+	"item": [
+		{
+			"name": "Client User Read Only",
+			"item": [
+				{
+					"name": "Request Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "clientUserReadOnly",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "secret",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "user.read",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/Connect/Token",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Connect",
+								"Token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client Order Read Only",
+			"item": [
+				{
+					"name": "Request Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "clientOrderReadOnly",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "secret",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "order.read",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/Connect/Token",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Connect",
+								"Token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client Order Full Access",
+			"item": [
+				{
+					"name": "Request Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "clientOrderFullAccess",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "secret",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "order.read order.write shared",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/Connect/Token",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Connect",
+								"Token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client User Full Access",
+			"item": [
+				{
+					"name": "Request Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "clientUserFullAccess",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "secret",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "user.read user.write shared",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/Connect/Token",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Connect",
+								"Token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkY5RjNGMEI4NDA0OTQyMTRCRjQ4MDJCNkY2RUREMzgxIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwibmJmIjoxNzAwMzE2NDMyLCJpYXQiOjE3MDAzMTY0MzIsImV4cCI6MTcwMDMyMDAzMiwiYXVkIjpbIm9yZGVyQXBpIiwidXNlckFwaSJdLCJzY29wZSI6WyJvcmRlci5yZWFkIiwib3JkZXIud3JpdGUiLCJzaGFyZWQiXSwiY2xpZW50X2lkIjoiY2xpZW50T3JkZXJGdWxsQWNjZXNzIiwianRpIjoiNTA4RTExRTQwQjBFMEE4MzA4RjZBNUE5RTAyMkE2MjQifQ.a64kvCq3lV-a5wAWu85AyIqzO2jHWwFpWJdBDnuDz42oRtisthEJFL1dxElwdj_P9w4yZxnkX0udA5264TpvbEoDXltU7FxwkDRT6zzb-TZIuC1w1oSkBH-aM5-Nnoi4rc_hf4emOsfT8PinR72aBl-DSf5zYbeQ-CBgwlrXfIYcEqu8rNZqMCmSCjVJ-4lu13wTzRcQ4OeFBzr57tNwzVngqTqPjEZRkyv2iB1XjxfnvuD6hiDsf4VzLd_IYrijAEbjr9h0vMhNrrL87bv5__1ZrUIE1TnpoRb2CpWmxNL2QFIzYe6Pb7sOOV1SgddTrA42rmBMksfos0CaU7Ji_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7001/api/User",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7001",
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shared Resource",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkY5RjNGMEI4NDA0OTQyMTRCRjQ4MDJCNkY2RUREMzgxIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwibmJmIjoxNzAwMzE2NDMyLCJpYXQiOjE3MDAzMTY0MzIsImV4cCI6MTcwMDMyMDAzMiwiYXVkIjpbIm9yZGVyQXBpIiwidXNlckFwaSJdLCJzY29wZSI6WyJvcmRlci5yZWFkIiwib3JkZXIud3JpdGUiLCJzaGFyZWQiXSwiY2xpZW50X2lkIjoiY2xpZW50T3JkZXJGdWxsQWNjZXNzIiwianRpIjoiNTA4RTExRTQwQjBFMEE4MzA4RjZBNUE5RTAyMkE2MjQifQ.a64kvCq3lV-a5wAWu85AyIqzO2jHWwFpWJdBDnuDz42oRtisthEJFL1dxElwdj_P9w4yZxnkX0udA5264TpvbEoDXltU7FxwkDRT6zzb-TZIuC1w1oSkBH-aM5-Nnoi4rc_hf4emOsfT8PinR72aBl-DSf5zYbeQ-CBgwlrXfIYcEqu8rNZqMCmSCjVJ-4lu13wTzRcQ4OeFBzr57tNwzVngqTqPjEZRkyv2iB1XjxfnvuD6hiDsf4VzLd_IYrijAEbjr9h0vMhNrrL87bv5__1ZrUIE1TnpoRb2CpWmxNL2QFIzYe6Pb7sOOV1SgddTrA42rmBMksfos0CaU7Ji_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7001/WeatherForecast",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7001",
+							"path": [
+								"WeatherForecast"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkY5RjNGMEI4NDA0OTQyMTRCRjQ4MDJCNkY2RUREMzgxIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwibmJmIjoxNzAwMDc3NzMxLCJpYXQiOjE3MDAwNzc3MzEsImV4cCI6MTcwMDA4MTMzMSwiYXVkIjpbInVzZXJBcGkiLCJvcmRlckFwaSJdLCJzY29wZSI6WyJzaGFyZWQiLCJ1c2VyLnJlYWQiLCJ1c2VyLndyaXRlIl0sImNsaWVudF9pZCI6ImNsaWVudFVzZXJGdWxsQWNjZXNzIiwianRpIjoiM0FCMDlGRjJEMEExODlEMjEwMzA5MEJENkNEQjU3NjYifQ.CaQDtOBMA9H-pwpdgGmVsdLoCITehzJVXJ3FL3EJNMXxGNiyTaOSFUqsw0da3xr7zJ_UuTW1ZQG1aCO6E0UruMcWqHGnZ-b5NUYlPO5721IFDvG-PAg9jUM4DaLYqGpCZSDj445clD4NEdk0oVJNL9_bbxCTLXBdxSoiFfmuD2ZYmcRxvDsrNW8sSFnHOQGWXegMMn2GZ9aaczJwjpCjeHPqrahfI2fatboBEYkQCpwmAlaHqQvhbuNSWvX3PyxBM8w7I7K-xIa8Sby1EW3IyUcVO7DXosfh-igIZ3NTHMSa1HPvkZA6Ewymaa6_QjbQjFFPCKu6F32zUNQs7GMKtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7001/api/User/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7001",
+							"path": [
+								"api",
+								"User",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkY5RjNGMEI4NDA0OTQyMTRCRjQ4MDJCNkY2RUREMzgxIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwibmJmIjoxNzAwMzE2NDMyLCJpYXQiOjE3MDAzMTY0MzIsImV4cCI6MTcwMDMyMDAzMiwiYXVkIjpbIm9yZGVyQXBpIiwidXNlckFwaSJdLCJzY29wZSI6WyJvcmRlci5yZWFkIiwib3JkZXIud3JpdGUiLCJzaGFyZWQiXSwiY2xpZW50X2lkIjoiY2xpZW50T3JkZXJGdWxsQWNjZXNzIiwianRpIjoiNTA4RTExRTQwQjBFMEE4MzA4RjZBNUE5RTAyMkE2MjQifQ.a64kvCq3lV-a5wAWu85AyIqzO2jHWwFpWJdBDnuDz42oRtisthEJFL1dxElwdj_P9w4yZxnkX0udA5264TpvbEoDXltU7FxwkDRT6zzb-TZIuC1w1oSkBH-aM5-Nnoi4rc_hf4emOsfT8PinR72aBl-DSf5zYbeQ-CBgwlrXfIYcEqu8rNZqMCmSCjVJ-4lu13wTzRcQ4OeFBzr57tNwzVngqTqPjEZRkyv2iB1XjxfnvuD6hiDsf4VzLd_IYrijAEbjr9h0vMhNrrL87bv5__1ZrUIE1TnpoRb2CpWmxNL2QFIzYe6Pb7sOOV1SgddTrA42rmBMksfos0CaU7Ji_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"firstName\": \"Ahmed\",\r\n  \"lastName\": \"Turky\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7001/api/User",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7001",
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order API",
+			"item": [
+				{
+					"name": "Get All Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkY5RjNGMEI4NDA0OTQyMTRCRjQ4MDJCNkY2RUREMzgxIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwibmJmIjoxNzAwMTY3MDg5LCJpYXQiOjE3MDAxNjcwODksImV4cCI6MTcwMDE3MDY4OSwiYXVkIjpbInVzZXJBcGkiLCJvcmRlckFwaSJdLCJzY29wZSI6WyJzaGFyZWQiLCJ1c2VyLnJlYWQiLCJ1c2VyLndyaXRlIl0sImNsaWVudF9pZCI6ImNsaWVudFVzZXJGdWxsQWNjZXNzIiwianRpIjoiQUJBMTFGQjZENEJEOTc1OTUyQjk4RTdGMTNCOEE5NzkifQ.p73-NEowUR6AgGU8BzoWGognEvkV5jc5XO7LG_eTp_vx0IZI3nUUabsuZHrTHs489k7D_iEyTSSNINb4vMGhOxOgvONwpwb5r_szI013izqCIYPshrWssYFgQB92a4oxsa-naxLdhuO8P5n_7W4_s7Cg1WDYOph9qNdOUqlT1mcgPbyVm0st3QCB4_7hnXLOv1SLn2iL2Lks3PKJ0N1GEu9VQXORPP-jjfrI2Ae9oOeTFtyApK1ZtCm5JQtojIWwBnSTfRN9BHgDqpA5GE7PZM7-LWrOt27_Rt-H99oO0YOxw2HS29ytenHotQUZR65j1q18-SbRXA0U6nSnhoW4DQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8001/api/Order",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"Order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkY5RjNGMEI4NDA0OTQyMTRCRjQ4MDJCNkY2RUREMzgxIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwibmJmIjoxNzAwMDc3NzMxLCJpYXQiOjE3MDAwNzc3MzEsImV4cCI6MTcwMDA4MTMzMSwiYXVkIjpbInVzZXJBcGkiLCJvcmRlckFwaSJdLCJzY29wZSI6WyJzaGFyZWQiLCJ1c2VyLnJlYWQiLCJ1c2VyLndyaXRlIl0sImNsaWVudF9pZCI6ImNsaWVudFVzZXJGdWxsQWNjZXNzIiwianRpIjoiM0FCMDlGRjJEMEExODlEMjEwMzA5MEJENkNEQjU3NjYifQ.CaQDtOBMA9H-pwpdgGmVsdLoCITehzJVXJ3FL3EJNMXxGNiyTaOSFUqsw0da3xr7zJ_UuTW1ZQG1aCO6E0UruMcWqHGnZ-b5NUYlPO5721IFDvG-PAg9jUM4DaLYqGpCZSDj445clD4NEdk0oVJNL9_bbxCTLXBdxSoiFfmuD2ZYmcRxvDsrNW8sSFnHOQGWXegMMn2GZ9aaczJwjpCjeHPqrahfI2fatboBEYkQCpwmAlaHqQvhbuNSWvX3PyxBM8w7I7K-xIa8Sby1EW3IyUcVO7DXosfh-igIZ3NTHMSa1HPvkZA6Ewymaa6_QjbQjFFPCKu6F32zUNQs7GMKtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8001/api/Order/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"Order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkY5RjNGMEI4NDA0OTQyMTRCRjQ4MDJCNkY2RUREMzgxIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwibmJmIjoxNzAwMDc3NzMxLCJpYXQiOjE3MDAwNzc3MzEsImV4cCI6MTcwMDA4MTMzMSwiYXVkIjpbInVzZXJBcGkiLCJvcmRlckFwaSJdLCJzY29wZSI6WyJzaGFyZWQiLCJ1c2VyLnJlYWQiLCJ1c2VyLndyaXRlIl0sImNsaWVudF9pZCI6ImNsaWVudFVzZXJGdWxsQWNjZXNzIiwianRpIjoiM0FCMDlGRjJEMEExODlEMjEwMzA5MEJENkNEQjU3NjYifQ.CaQDtOBMA9H-pwpdgGmVsdLoCITehzJVXJ3FL3EJNMXxGNiyTaOSFUqsw0da3xr7zJ_UuTW1ZQG1aCO6E0UruMcWqHGnZ-b5NUYlPO5721IFDvG-PAg9jUM4DaLYqGpCZSDj445clD4NEdk0oVJNL9_bbxCTLXBdxSoiFfmuD2ZYmcRxvDsrNW8sSFnHOQGWXegMMn2GZ9aaczJwjpCjeHPqrahfI2fatboBEYkQCpwmAlaHqQvhbuNSWvX3PyxBM8w7I7K-xIa8Sby1EW3IyUcVO7DXosfh-igIZ3NTHMSa1HPvkZA6Ewymaa6_QjbQjFFPCKu6F32zUNQs7GMKtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"productName\": \"Apple\",\r\n  \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8001/api/Order",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"Order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shared Resource",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkY5RjNGMEI4NDA0OTQyMTRCRjQ4MDJCNkY2RUREMzgxIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwibmJmIjoxNzAwMDc3NzMxLCJpYXQiOjE3MDAwNzc3MzEsImV4cCI6MTcwMDA4MTMzMSwiYXVkIjpbInVzZXJBcGkiLCJvcmRlckFwaSJdLCJzY29wZSI6WyJzaGFyZWQiLCJ1c2VyLnJlYWQiLCJ1c2VyLndyaXRlIl0sImNsaWVudF9pZCI6ImNsaWVudFVzZXJGdWxsQWNjZXNzIiwianRpIjoiM0FCMDlGRjJEMEExODlEMjEwMzA5MEJENkNEQjU3NjYifQ.CaQDtOBMA9H-pwpdgGmVsdLoCITehzJVXJ3FL3EJNMXxGNiyTaOSFUqsw0da3xr7zJ_UuTW1ZQG1aCO6E0UruMcWqHGnZ-b5NUYlPO5721IFDvG-PAg9jUM4DaLYqGpCZSDj445clD4NEdk0oVJNL9_bbxCTLXBdxSoiFfmuD2ZYmcRxvDsrNW8sSFnHOQGWXegMMn2GZ9aaczJwjpCjeHPqrahfI2fatboBEYkQCpwmAlaHqQvhbuNSWvX3PyxBM8w7I7K-xIa8Sby1EW3IyUcVO7DXosfh-igIZ3NTHMSa1HPvkZA6Ewymaa6_QjbQjFFPCKu6F32zUNQs7GMKtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8001/WeatherForecast",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"WeatherForecast"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "Get Forcast",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkY5RjNGMEI4NDA0OTQyMTRCRjQ4MDJCNkY2RUREMzgxIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwibmJmIjoxNzAwMDgzNzU5LCJpYXQiOjE3MDAwODM3NTksImV4cCI6MTcwMDA4NzM1OSwiYXVkIjpbIm9yZGVyQXBpIiwidXNlckFwaSJdLCJzY29wZSI6WyJvcmRlci5yZWFkIiwib3JkZXIud3JpdGUiLCJzaGFyZWQiXSwiY2xpZW50X2lkIjoiY2xpZW50T3JkZXJGdWxsQWNjZXNzIiwianRpIjoiNDVFMDBEODBEMDU1NEIxMjdDOTNFOUE2QkVGRUIwMjUifQ.GSqJQ7GldbrLlALtOPUh4l8EX4Uh4GUyQ3a5qUAv8sZUxAv6BBwgL5bSSkYy4iJwbIIcA5xypGVqt6BPVKGe5A0UL-Nk2zT3OmSm3FQtJW9FB0DKAvaWGTkLls_l7T8SDW2UcavdzHV_uVEvLE8RLElCcwfBQhXtqeaL5YIsTJFEDv5_1uoAm6DJ_ErimMdmnjzVZOzGrrnNHtPa5jj-5bDoVXZLixNRFD1ha7RXkRlNB5DD2xmaIxDKCJlaYLFUHJATViLG4TXoLVitirEmgOR6fdwriCsMoqNxrIeKLlYJxoUOY69zwDi9XWv1mwEUMPLZQykhRe6sHOd2C9aogw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:6001/WeatherForecast/GetWeatherForecast",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "6001",
+							"path": [
+								"WeatherForecast",
+								"GetWeatherForecast"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
